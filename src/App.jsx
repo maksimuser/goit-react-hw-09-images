@@ -34,7 +34,7 @@ export default function App() {
     fetchData();
   }, [currentPage, searchQuery]);
 
-  const nextPage = () => {
+  const loadMore = () => {
     setCurrentPage(state => state + 1);
   };
 
@@ -69,7 +69,7 @@ export default function App() {
           <Loader type="ThreeDots" color="blue" height={80} width={80} />
         </div>
       )}
-      {shouldRenderLoadButton && <Button onLoadMore={nextPage} />}
+      {shouldRenderLoadButton && <Button onLoadMore={loadMore} />}
     </div>
   );
 }
